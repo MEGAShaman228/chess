@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-assets>
+
+          <a-asset-item id="part1" src="1_ch1peshka1.gltf"></a-asset-item>
+          <a-asset-item id="part2" src="1_ch2peshka1.gltf"></a-asset-item>
+        </a-assets>
+       
+        <a-marker type="barcode" value="1">
+          <a-gltf-model src="#part1" position="-2 0.5 -2" scale="0.04 0.04 0.04"></a-gltf-model>
+          <a-gltf-model src="#part2" position="2 0.5 -2" scale="0.04 0.04 0.04" rotation="0 120 0"
+          animation__1="property: position; to:2 2 -2; easing: linear; dur: 1500; dir: forward;" 
+          animation__2="property: position; from:2 2 -2; to:-2 2 -2; easing: linear; dur:1500; delay:1500 " 
+          animation__3="property: position; from:-2 2 -2; to:-2 0.5 -2; easing: linear; dur:1500; delay:3000 "
+          animation__4="property: rotation;  to:0 0 0; easing: linear; dur:1500; delay:3000 " ></a-gltf-model>
+
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
